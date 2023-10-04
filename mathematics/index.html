@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Lauren Dransfield" /><link rel="canonical" href="https://LADransfield.github.io/notes/mathematics/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Mathematics - Engineering notebook</title>
+    <title>Mathematics - Engineering Notebook</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../styles/sectionnumbers.css" rel="stylesheet" />
+        <link href="../styles/style.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -35,7 +36,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> Engineering notebook
+          <a href=".." class="icon icon-home"> Engineering Notebook
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
       <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
@@ -165,7 +166,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#differentiation">Differentiation</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#integration-and-curbvilinear-coordinates">Integration and curbvilinear coordinates</a>
+    <li class="toctree-l3"><a class="reference internal" href="#integration-and-curvilinear-coordinates">Integration and curvilinear coordinates</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#line-and-surface-integrals">Line and surface integrals</a>
     </li>
@@ -181,37 +182,13 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#random-variables">Random variables</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#damplins-and-confidence-intervals">Damplins and confidence intervals</a>
+    <li class="toctree-l3"><a class="reference internal" href="#sampling-and-confidence-intervals">Sampling and confidence intervals</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#hypothesis-testing">Hypothesis testing</a>
     </li>
         </ul>
     </li>
     </ul>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../fluidMechanics/">Fluid Mechanics</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../solidMechanics/">Solid Mechanics</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../thermodynamics/">Thermodynamics</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../electronics/">Electronics</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../materials/">Materials</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../manufacturing/">Manufacturing</a>
                 </li>
               </ul>
       </div>
@@ -221,7 +198,7 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
       <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="..">Engineering notebook</a>
+          <a href="..">Engineering Notebook</a>
         
       </nav>
       <div class="wy-nav-content">
@@ -309,7 +286,7 @@
   \end{bmatrix}
 \]</div>
 <p>Matrices which are not the same size cannot be added</p>
-<p>Multiplying a matric by a scalar is also element by element:</p>
+<p>Multiplying a matrix by a scalar is also element by element:</p>
 <div class="arithmatex">\[
   \begin{bmatrix}
     a &amp; b \\
@@ -320,7 +297,7 @@
   \end{bmatrix}
 \]</div>
 <p>The matrix can be any size when multiplying by a scalar</p>
-<p>Multiplying two matrices requires multiplying across the rows of the first matrixs, and down the columns of the second and summing the result:</p>
+<p>Multiplying two matrices requires multiplying across the rows of the first matrix, and down the columns of the second and summing the result:</p>
 <div class="arithmatex">\[
   \begin{bmatrix}
     a &amp; b \\
@@ -346,8 +323,8 @@
     ga+hc &amp; gb+hd
   \end{bmatrix}
 \]</div>
-<p>Because the rows of the first matrix are multiplied by the columns of the second, the first matric must have the same number of rows as the second's number of columns</p>
-<p>The general formula for the matricplication of matrices is:</p>
+<p>Because the rows of the first matrix are multiplied by the columns of the second, the first matrix must have the same number of rows as the second's number of columns</p>
+<p>The general formula for the multiplication of matrices is:</p>
 <div class="arithmatex">\[
 C = A B
 \]</div>
@@ -831,21 +808,20 @@ RREF(A) = \begin{bmatrix}
 <h2 id="vector-calculus">Vector calculus</h2>
 <h3 id="vectors">Vectors</h3>
 <h3 id="differentiation">Differentiation</h3>
-<h3 id="integration-and-curbvilinear-coordinates">Integration and curbvilinear coordinates</h3>
+<h3 id="integration-and-curvilinear-coordinates">Integration and curvilinear coordinates</h3>
 <h3 id="line-and-surface-integrals">Line and surface integrals</h3>
 <h3 id="fundamental-theorems">Fundamental theorems</h3>
 <h2 id="statistics-and-probability">Statistics and probability</h2>
 <h3 id="descriptive-statistics">Descriptive statistics</h3>
 <h3 id="basic-probability">Basic probability</h3>
 <h3 id="random-variables">Random variables</h3>
-<h3 id="damplins-and-confidence-intervals">Damplins and confidence intervals</h3>
+<h3 id="sampling-and-confidence-intervals">Sampling and confidence intervals</h3>
 <h3 id="hypothesis-testing">Hypothesis testing</h3>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../fluidMechanics/" class="btn btn-neutral float-right" title="Fluid Mechanics">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -870,8 +846,6 @@ RREF(A) = \begin{bmatrix}
     
       <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../fluidMechanics/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

@@ -6,7 +6,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://LADransfield.github.io/notes/computationalFluidDynamics/</loc>
+         <lastmod>2023-10-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://LADransfield.github.io/notes/electronics/</loc>
+         <lastmod>2023-10-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://LADransfield.github.io/notes/finiteElementAnalysis/</loc>
          <lastmod>2023-10-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
