@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Lauren Dransfield" /><link rel="canonical" href="https://LADransfield.github.io/notes/computationalFluidDynamics/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Lauren Dransfield" /><link rel="canonical" href="https://LADransfield.github.io/computationalFluidDynamics/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
     <title>Computational Fluid Dynamics - Engineering Notebook</title>
     <link rel="stylesheet" href="../css/theme.css" />
@@ -16,7 +16,7 @@
         // Current page data
         var mkdocs_page_name = "Computational Fluid Dynamics";
         var mkdocs_page_input_path = "computationalFluidDynamics.md";
-        var mkdocs_page_url = "/notes/computationalFluidDynamics/";
+        var mkdocs_page_url = "/computationalFluidDynamics/";
       </script>
     
     <!--[if lt IE 9]>
@@ -57,17 +57,93 @@
                 <li class="toctree-l1"><a class="reference internal" href="../fluidMechanics/">Fluid Mechanics</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../thermodynamics/">Thermodynamics</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../electronics/">Electronics</a>
-                </li>
-              </ul>
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="./">Computational Fluid Dynamics</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#the-cfd-process">The CFD process</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#pre-processing">Pre-processing</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#geometry-creation">Geometry creation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mesh-creation">Mesh creation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#selection-of-physics">Selection of physics</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#selection-of-boundary-conditions">Selection of boundary conditions</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#solution">Solution</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#initialisation">Initialisation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#control">Control</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#convergence">Convergence</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-processing">Post-processing</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#x-y-plots">X-Y plots</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#vector-plots">Vector plots</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#contour-plots">Contour plots</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#animations">Animations</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#governing-equations">Governing equations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#the-continuity-equation">The continuity equation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-momentum-equation">The momentum equation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#the-energy-equation">The energy equation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#turbulence-equations">Turbulence equations</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#techniques">Techniques</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#finite-difference-method">Finite difference method</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#finite-volume-method">Finite volume method</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#meshing">Meshing</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mesh-types">Mesh types</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#local-mesh-refinement">Local mesh refinement</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#moving-meshes">Moving meshes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#adaptive-meshing">Adaptive meshing</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#analysis">Analysis</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#consistency">Consistency</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#stability">Stability</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#monitoring-convergence">Monitoring convergence</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#accuracy">Accuracy</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#efficiency">Efficiency</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -95,11 +171,45 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="computational-fluid-dynamics">Computational Fluid Dynamics</h1>
+<h2 id="the-cfd-process">The CFD process</h2>
+<h3 id="pre-processing">Pre-processing</h3>
+<h4 id="geometry-creation">Geometry creation</h4>
+<h4 id="mesh-creation">Mesh creation</h4>
+<h4 id="selection-of-physics">Selection of physics</h4>
+<h4 id="selection-of-boundary-conditions">Selection of boundary conditions</h4>
+<h3 id="solution">Solution</h3>
+<h4 id="initialisation">Initialisation</h4>
+<h4 id="control">Control</h4>
+<h4 id="convergence">Convergence</h4>
+<h3 id="post-processing">Post-processing</h3>
+<h4 id="x-y-plots">X-Y plots</h4>
+<h4 id="vector-plots">Vector plots</h4>
+<h4 id="contour-plots">Contour plots</h4>
+<h4 id="animations">Animations</h4>
+<h2 id="governing-equations">Governing equations</h2>
+<h3 id="the-continuity-equation">The continuity equation</h3>
+<h3 id="the-momentum-equation">The momentum equation</h3>
+<h3 id="the-energy-equation">The energy equation</h3>
+<h3 id="turbulence-equations">Turbulence equations</h3>
+<h2 id="techniques">Techniques</h2>
+<h3 id="finite-difference-method">Finite difference method</h3>
+<h3 id="finite-volume-method">Finite volume method</h3>
+<h2 id="meshing">Meshing</h2>
+<h3 id="mesh-types">Mesh types</h3>
+<h3 id="local-mesh-refinement">Local mesh refinement</h3>
+<h3 id="moving-meshes">Moving meshes</h3>
+<h3 id="adaptive-meshing">Adaptive meshing</h3>
+<h2 id="analysis">Analysis</h2>
+<h3 id="consistency">Consistency</h3>
+<h3 id="stability">Stability</h3>
+<h3 id="monitoring-convergence">Monitoring convergence</h3>
+<h3 id="accuracy">Accuracy</h3>
+<h3 id="efficiency">Efficiency</h3>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../electronics/" class="btn btn-neutral float-left" title="Electronics"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../fluidMechanics/" class="btn btn-neutral float-left" title="Fluid Mechanics"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -122,7 +232,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../electronics/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../fluidMechanics/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>
