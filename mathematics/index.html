@@ -944,7 +944,7 @@ P A = (P I) A
 <p>A pivot (red) is selected, and the rows below the pivot undergo operations to make any values directly below the pivot equal to zero</p>
 <div class="arithmatex">\[
  \begin{bmatrix}
-    {\colorbox{yellow}-3} &amp; 2 &amp; -1 &amp; -1\\
+    {\color{blue}-3} &amp; 2 &amp; -1 &amp; -1\\
     6 &amp; -6 &amp; 7 &amp; -7\\
     3 &amp; -4 &amp; 4 &amp; -6
   \end{bmatrix}
@@ -962,7 +962,7 @@ P A = (P I) A
 <div class="arithmatex">\[
 \begin{bmatrix}
     -3 &amp; 2 &amp; -1 &amp; -1\\
-    0 &amp; {\colorbox{yellow}-2} &amp; 5 &amp; -9\\
+    0 &amp; {\color{blue}-2} &amp; 5 &amp; -9\\
     0 &amp; -2 &amp; 3 &amp; -7
   \end{bmatrix}
  \begin{matrix}
@@ -1010,7 +1010,7 @@ x_1&amp;=2
 \]</div>
 <div class="arithmatex">\[
  \begin{bmatrix}
-    {\colorbox{yellow}1} &amp; 2 &amp; 3 &amp; 4\\
+    {\color{blue}1} &amp; 2 &amp; 3 &amp; 4\\
     4 &amp; 5 &amp; 6 &amp; 7\\
     6 &amp; 7 &amp; 8 &amp; 9
   \end{bmatrix}
@@ -1043,7 +1043,7 @@ x_1&amp;=2
 <div class="arithmatex">\[
  \begin{bmatrix}
     1 &amp; 2 &amp; 3 &amp; 4\\
-    0 &amp; {\colorbox{yellow}1} &amp; 2 &amp; 3\\
+    0 &amp; {\color{blue}1} &amp; 2 &amp; 3\\
     0 &amp; 1 &amp; 2 &amp; 3
   \end{bmatrix}
  \begin{matrix}
@@ -1064,6 +1064,102 @@ RREF(A) = \begin{bmatrix}
   \end{bmatrix}
 \]</div>
 <h4 id="computing-inverses">Computing inverses</h4>
+<p>The reduced row echelon form can be used to find inverses of matrices</p>
+<div class="arithmatex">\[
+A = \begin{bmatrix}
+-3 &amp; 2 &amp; -1 \\
+6 &amp; -6 &amp; 7 \\
+3 &amp; -4 &amp; 4
+\end{bmatrix}
+\]</div>
+<p>For a matrix to be invertible:</p>
+<div class="arithmatex">\[
+\begin{align*}
+A A^{-1} &amp;= I
+A a_{i}^{-1} &amp;= e
+\end{align*}
+\]</div>
+<p>We combine the identity matrix and the original matrix for the augmented matrix:</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+-3 &amp; 2 &amp; -1 &amp; 1 &amp; 0 &amp; 0\\
+6 &amp; -6 &amp; 7 &amp; 0 &amp; 1 &amp; 0\\
+3 &amp; -4 &amp; 4 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<p>And calculate the reduced row echelon form:</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+{\color{blue}-3} &amp; 2 &amp; -1 &amp; 1 &amp; 0 &amp; 0\\
+6 &amp; -6 &amp; 7 &amp; 0 &amp; 1 &amp; 0\\
+3 &amp; -4 &amp; 4 &amp; 0 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{matrix}
+\\
++ 2 \times Row 1\\
++ 1 \times Row 1
+\end{matrix} \Rightarrow  \begin{bmatrix}
+-3 &amp; 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; -2 &amp; 5 &amp; 2&amp; 1 &amp; 0\\
+0 &amp; -2 &amp; 3 &amp; 1 &amp; 0 &amp; 1
+\end{bmatrix}
+\]</div>
+<div class="arithmatex">\[
+\begin{bmatrix}
+-3 &amp; 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0\\
+0 &amp; {\color{blue}-2} &amp; 5 &amp; 2&amp; 1 &amp; 0\\
+0 &amp; -2 &amp; 3 &amp; 1 &amp; 0 &amp; 1
+\end{bmatrix}
+\begin{matrix}
++ 1 \times Row 2\\
+\\
++ -1 \times Row 2
+\end{matrix} \Rightarrow  \begin{bmatrix}
+-3 &amp; 0 &amp; 4 &amp; 3 &amp; 1 &amp; 0\\
+0 &amp; -2 &amp; 5 &amp; 2&amp; 1 &amp; 0\\
+0 &amp; 0 &amp; -2 &amp; -1 &amp; -1 &amp; 1
+\end{bmatrix}
+\]</div>
+<p>$$
+\begin{bmatrix}
+-3 &amp; 0 &amp; 4 &amp; 3 &amp; 1 &amp; 0\
+0 &amp; -2 &amp; 5 &amp; 2&amp; 1 &amp; 0\
+0 &amp; 0 &amp; {\color{blue}-2} &amp; -1 &amp; -1 &amp; 1
+\end{bmatrix}
+\begin{matrix}
++ 2 \times Row 3\
++ 2.5 \times Row 3\</p>
+<p>\end{matrix} \Rightarrow  \begin{bmatrix}
+-3 &amp; 0 &amp; 0 &amp; 1 &amp; -1 &amp; 2\
+0 &amp; -2 &amp; 0 &amp; -\frac{1}{2} &amp; -\frac{3}{2} &amp; \frac{5}{2}\
+0 &amp; 0 &amp; -2 &amp; -1 &amp; -1 &amp; 1
+\end{bmatrix}
+$$</p>
+<div class="arithmatex">\[
+\begin{bmatrix}
+-3 &amp; 0 &amp; 0 &amp; 1 &amp; -1 &amp; 2\\
+0 &amp; -2 &amp; 0 &amp; -\frac{1}{2} &amp; -\frac{3}{2} &amp; \frac{5}{2}\\
+0 &amp; 0 &amp; -2 &amp; -1 &amp; -1 &amp; 1
+\end{bmatrix}
+\begin{matrix}
+\div -3\\
+\div -2\\
+\div -2
+\end{matrix} \Rightarrow  \begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; -\frac{1}{3} &amp; \frac{1}{3} &amp; -\frac{2}{3}\\
+0 &amp; 1 &amp; 0 &amp; \frac{1}{4} &amp; \frac{3}{4} &amp; -\frac{5}{4}\\
+0 &amp; 0 &amp; 1 &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; -\frac{1}{2}
+\end{bmatrix}
+\]</div>
+<p>Therefore the inverse is:</p>
+<div class="arithmatex">\[
+A=
+\begin{bmatrix}
+1 &amp; 0 &amp; 0 &amp; -\frac{1}{3} &amp; \frac{1}{3} &amp; -\frac{2}{3}\\
+0 &amp; 1 &amp; 0 &amp; \frac{1}{4} &amp; \frac{3}{4} &amp; -\frac{5}{4}\\
+0 &amp; 0 &amp; 1 &amp; \frac{1}{2} &amp; \frac{1}{2} &amp; -\frac{1}{2}
+\end{bmatrix}
+\]</div>
 <h4 id="elementary-matrices">Elementary matrices</h4>
 <h4 id="lu-decomposition">LU decomposition</h4>
 <h3 id="vector-spaces">Vector spaces</h3>
