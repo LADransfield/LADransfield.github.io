@@ -769,42 +769,54 @@ A A^{-1} = I
 \]</div>
 <p>We can make the following set of equations:</p>
 <div class="arithmatex">\[
-a x_{1} + b y_{1} = 1 \\
-a x_{2} + b y_{2} = 0 \\
-c x_{1} + d y_{1} = 0 \\
-c x_{2} + d y_{2} = 1
+\begin{align*}
+a x_{1} + b y_{1} &amp;= 1 \\
+a x_{2} + b y_{2} &amp;= 0 \\
+c x_{1} + d y_{1} &amp;= 0 \\
+c x_{2} + d y_{2} &amp;= 1
+\end{align*}
 \]</div>
 <p>Therefore:</p>
 <div class="arithmatex">\[
-y_{1} = \dfrac{-c}{d} x_{1} \\
-y_{2} = \dfrac{-a}{b} x_{2}
+\begin{align*}
+y_{1} &amp;= \dfrac{-c}{d} x_{1} \\
+y_{2} &amp;= \dfrac{-a}{b} x_{2}
+\end{align*}
 \]</div>
 <p>Finding x1:</p>
 <div class="arithmatex">\[
-a x_{1} + b y_{1} = 1 \\
-a x_{1} + b \dfrac{-c}{d} x_{1} = 1 \\
-x_{1}\left(\dfrac{ad}{d} - \dfrac{bc}{d}\right)= 1 \\
-x_{1} = \dfrac{d}{ad-bc}
+\begin{align*}
+a x_{1} + b y_{1} &amp;= 1 \\
+a x_{1} + b \dfrac{-c}{d} x_{1} &amp;= 1 \\
+x_{1}\left(\dfrac{ad}{d} - \dfrac{bc}{d}\right)&amp;= 1 \\
+x_{1} &amp;= \dfrac{d}{ad-bc}
+\end{align*}
 \]</div>
 <p>Finding y1:</p>
 <div class="arithmatex">\[
-y_{1} = \dfrac{-c}{d} x_{1} \\
-y_{1} = \dfrac{-c}{d} \dfrac{d}{ad-bc} \\
-y_{1} = \dfrac{-c}{ad-bc}
+\begin{align*}
+y_{1} &amp;= \dfrac{-c}{d} x_{1} \\
+y_{1} &amp;= \dfrac{-c}{d} \dfrac{d}{ad-bc} \\
+y_{1} &amp;= \dfrac{-c}{ad-bc}
+\end{align*}
 \]</div>
 <p>Finding x2:</p>
 <div class="arithmatex">\[
-c x_{2} + d y_{2} = 1 \\
-c x_{2} + d \dfrac{-a}{b} x_{2} = 1 \\
-x_{2}\left(\dfrac{cb}{b} - \dfrac{ad}{b}\right)= 1 \\
-x_{2} = \dfrac{b}{cb-ad} \\
-x_{2} = \dfrac{-b}{ad-bc}
+\begin{align*}
+c x_{2} + d y_{2} &amp;= 1 \\
+c x_{2} + d \dfrac{-a}{b} x_{2} &amp;= 1 \\
+x_{2}\left(\dfrac{cb}{b} - \dfrac{ad}{b}\right) &amp;= 1 \\
+x_{2} &amp;= \dfrac{b}{cb-ad} \\
+x_{2} &amp;= \dfrac{-b}{ad-bc}
+\end{align*}
 \]</div>
 <p>Finding y2:</p>
 <div class="arithmatex">\[
-y_{2} = \dfrac{-a}{b} x_{2} \\
-y_{2} = \dfrac{-a}{b} \dfrac{-b}{ad-bc} \\
-y_{2} = \dfrac{a}{ad-bc}
+\begin{align*}
+y_{2} &amp;= \dfrac{-a}{b} x_{2} \\
+y_{2} &amp;= \dfrac{-a}{b} \dfrac{-b}{ad-bc} \\
+y_{2} &amp;= \dfrac{a}{ad-bc}
+\end{align*}
 \]</div>
 <p>Therefore:</p>
 <div class="arithmatex">\[
@@ -897,9 +909,11 @@ P A = (P I) A
 <p>These operations are performed on the matrix until an upper triangular matrix is formed</p>
 <p>An example is used below to demonstrate the process</p>
 <div class="arithmatex">\[
--3x_1+2x_2-x_3=-1\\
-6x_1-6x_2+7x_3=-7\\
-3x_1-4x_2+4x_3=-6
+\begin{align*}
+-3x_1+2x_2-x_3&amp;=-1\\
+6x_1-6x_2+7x_3&amp;=-7\\
+3x_1-4x_2+4x_3&amp;=-6
+\end{align*}
 \]</div>
 <p>First, the system of equations are written as a matrix multiplication</p>
 <div class="arithmatex">\[
@@ -961,22 +975,26 @@ P A = (P I) A
 \]</div>
 <p>This matrix can now be converted back into a system of equations to be solved by back substitution</p>
 <div class="arithmatex">\[
--3x_1+2x_2-x_3=-1\\
--2x_2+5x_3=-9\\
--2x_3=2
+\begin{align*}
+-3x_1+2x_2-x_3&amp;=-1\\
+-2x_2+5x_3&amp;=-9\\
+-2x_3&amp;=2\\
+x_3 &amp;= -1
+\end{align*}
 \]</div>
 <div class="arithmatex">\[
-x_3 = -1
+\begin{align*}
+-2 x_2 - 5&amp;=-9\\
+-2x_2&amp;=-4\\
+x_2&amp;=2
+\end{align*}
 \]</div>
 <div class="arithmatex">\[
--2 x_2 - 5=-9\\
--2x_2=-4\\
-x_2=2
-\]</div>
-<div class="arithmatex">\[
--3x_1+4+1=-1\\
--2x_1=-6\\
-x_1=2
+\begin{align*}
+-3x_1+4+1&amp;=-1\\
+-2x_1&amp;=-6\\
+x_1&amp;=2
+\end{align*}
 \]</div>
 <h4 id="reduced-row-echelon-form">Reduced row echelon form</h4>
 <p>The reduced row echelon form is an expansion on Gaussian elimination</p>
